@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "name": "plg_editorjs_button",
+  "type": "plugin",
+  "vendor": "klucon",
+  "extension_id": "klucon/plg_editorjs_button",
+  "version": "0.1.0",
+  "display_name": "Editor.js – Button",
+  "display_name_key": "extensions.name.plg_editorjs_button",
+  "description": "Přidává Editor.js block 'button' pro vkládání tlačítek s odkazem.",
+  "license": "MIT",
+  "author": {
+    "name": "KLUCON",
+    "url": "https://klucon.cz"
+  },
+  "links": {
+    "homepage": "https://marketplace.klucon.cz",
+    "repository": "https://github.com/klucon/plg_editorjs_button"
+  },
+  "compatibility": {
+    "core_min": "0.2.25",
+    "core_max": null,
+    "python": ">=3.12"
+  },
+  "package": {
+    "entrypoint": "src.plugins.plg_editorjs_button",
+    "setup_function": "setup",
+    "admin_router": "admin.router"
+  },
+  "requires": {
+    "plugins": [
+      {
+        "extension_id": "klucon/plg_editorjs",
+        "version_min": "0.3.0"
+      }
+    ]
+  },
+  "i18n": {
+    "domain": "plg_editorjs_button",
+    "locales_path": "i18n",
+    "required_locales": [
+      "cs_CZ",
+      "en_GB"
+    ]
+  },
+  "migrations": {
+    "enabled": false
+  },
+  "security": {
+    "requires_signature": true,
+    "capabilities": [
+      "plugin.hooks",
+      "admin.routes"
+    ]
+  },
+  "marketplace": {
+    "category": "editor",
+    "tags": [
+      "editor",
+      "editorjs",
+      "button",
+      "cta"
+    ]
+  },
+  "changelog": "První verze: blok 'button' pro Editor.js zaregistrovaný přes registry API plg_editorjs 0.3.0+."
+}
