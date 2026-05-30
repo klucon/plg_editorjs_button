@@ -4,7 +4,7 @@
   "type": "plugin",
   "vendor": "klucon",
   "extension_id": "klucon/plg_editorjs_button",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "display_name": "Editor.js – Button",
   "display_name_key": "extensions.name.plg_editorjs_button",
   "description": "Přidává Editor.js block 'button' pro vkládání tlačítek s odkazem.",
@@ -31,7 +31,7 @@
     "plugins": [
       {
         "extension_id": "klucon/plg_editorjs",
-        "version_min": "0.3.0"
+        "version_min": "0.5.0"
       }
     ]
   },

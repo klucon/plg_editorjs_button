@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "plg_editorjs_button"
-version = "0.1.0"
+version = "0.2.0"
 description = "Editor.js button block tool pro KLUCON CMS"
 requires-python = ">=3.12"
 dependencies = []
@@ -15,6 +15,7 @@ dev = [
     "pytest-asyncio>=0.23.0",
     "httpx>=0.27.0",
     "aiosqlite>=0.20.0",
+    "plg_editorjs_test_kit @ file://../plg_editorjs_test_kit",
 ]
 
 [tool.pytest.ini_options]

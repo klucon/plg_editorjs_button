@@ -9,7 +9,7 @@ if TYPE_CHECKING:
     from src.core.registry import ComponentRegistry
 
 _PLUGIN_DIR = Path(__file__).parent
-_ASSET_VERSION = "0.1.0"
+_ASSET_VERSION = "0.2.0"
 _ASSET_BASE = "/admin/plg_editorjs_button/static"
 
 
@@ -17,7 +17,12 @@ def _asset(name: str) -> str:
     return f"{_ASSET_BASE}/{name}?v={_ASSET_VERSION}"
 
 
+async def _frontend_css(**kwargs: object) -> str:
+    return f'<link rel="stylesheet" href="{_asset("frontend.css")}">'
+
+
 def setup(registry: ComponentRegistry) -> None:
+    from src.core.hooks import hooks
     from src.i18n.translator import translator
     from src.plugins.plg_editorjs import ToolSpec, register_tool
 
@@ -35,6 +40,9 @@ def setup(registry: ComponentRegistry) -> None:
             default_enabled=False,
         )
     )
+
+    hooks.off("frontend.head", _frontend_css)
+    hooks.on("frontend.head", _frontend_css)
 
     registry.register_router(admin.router)
     translator.load_domain("plg_editorjs_button", _PLUGIN_DIR / "i18n")
